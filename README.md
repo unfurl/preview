@@ -1,3 +1,3 @@
 # Unfurl
 
-This project contains reusable components  for Unfurl
+This project contains reusable preview  for Unfurl

@@ -2,11 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import {ComponentsModule} from '@unfurl/components';
+import {PreviewModule} from '@unfurl/preview';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ComponentsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    PreviewModule.forRoot({
+      apiToken: 'KrFLdTvByTk45sAmIOWXsEQHuJfBw7wtDfMvHcvwrTzTWEHbsDdg7XiKub6y'
+    })
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
