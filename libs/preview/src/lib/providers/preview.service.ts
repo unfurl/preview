@@ -19,7 +19,6 @@ export class PreviewService {
       Authorization: `Bearer ${this.config.apiToken}`
     }})
     .pipe(
-      startWith({url}),
       catchError(error => of({url}))
     )
   }

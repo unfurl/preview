@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     PreviewModule.forRoot({
+      /* Free Test Token */
       apiToken: 'KrFLdTvByTk45sAmIOWXsEQHuJfBw7wtDfMvHcvwrTzTWEHbsDdg7XiKub6y'
     })
   ],
