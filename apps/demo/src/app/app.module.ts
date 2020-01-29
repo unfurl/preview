@@ -12,7 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     PreviewModule.forRoot({
       /* Free Test Token */
-      apiToken: 'KrFLdTvByTk45sAmIOWXsEQHuJfBw7wtDfMvHcvwrTzTWEHbsDdg7XiKub6y'
+      apiToken: 'mdi61be6EhHH8Tdcqt5twdltZmFKRhiF87lWONb7hiF6PODKlHiHOMaQNSMW'
     })
   ],
   providers: [],
