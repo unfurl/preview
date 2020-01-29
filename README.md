@@ -24,7 +24,7 @@ This project contains reusable preview  for Unfurl
                 HttpClientModule,
                 PreviewModule.forRoot({
                 /* Free Test Token */
-                apiToken: 'KrFLdTvByTk45sAmIOWXsEQHuJfBw7wtDfMvHcvwrTzTWEHbsDdg7XiKub6y'
+                apiToken: 'Paste your API Token Here'
                 })
             ],
             providers: [],
