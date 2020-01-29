@@ -10,7 +10,7 @@ This project contains reusable preview  for Unfurl
 
 * Next, in Create API Token section assign a token name and clcik on create.
 
-> Note: Please save generated api token as it is only displayed for one time.  
+> Note: Please save the generated api token, it is only displayed for one time.  
 
 ## Seting up API token
 
