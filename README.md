@@ -8,7 +8,7 @@ This project contains reusable preview  for Unfurl
 
 * After login, from the dashboard navigate to Generate/Manage your Api Tokens here.
 
-* Next, in Create API Token section assign a token name and clcik on create.
+* Next, in Create API Token section assign a token name and click on create.
 
 > Note: Please save the generated api token, it is only displayed for one time.  
 
@@ -76,4 +76,4 @@ This project contains reusable preview  for Unfurl
         <div class="spacer"></div>
     ```
 
-  * Set mode property `mode="Your desired style"` to `simple or compact or detailed` in `<unfurl-url>`
+  * Set mode property `mode="Your desired style"` to `simple or compact or detailed` in `<unfurl-preview>` tag.
