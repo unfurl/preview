@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormControl, FormGroup} from '@angular/forms';
+
 
 @Component({
   selector: 'unfurl-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  urlInput = new FormControl('');
+  modeInput = new FormControl('');
+
+  genPreview() {
+   
+  }
 }
+
+

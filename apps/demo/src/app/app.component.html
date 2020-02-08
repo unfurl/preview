@@ -1,3 +1,15 @@
+<h1>Welcome to Free Link Preview</h1>
+<div class="center">
+    <input type="text" [formControl]="urlInput" placeholder="Enter your URL to preview">
+    <select [formControl]="modeInput" name="modelist">
+        <option value="fiat" selected>Select Preview Mode</option>
+        <option value="simple">Simple</option>
+        <option value="compact">Compact</option>
+        <option value="detailed">Detailed</option>
+      </select>
+    <button (click)="genPreview()">Generate Your Link Preview</button>
+</div>
+
 <div class="spacer"></div>
 <unfurl-preview url="https://github.com/" mode="simple"></unfurl-preview>
 <div class="spacer"></div>
