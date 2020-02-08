@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
 
 
 @Component({
@@ -9,12 +9,29 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class AppComponent {
   title = 'demo';
-  urlInput = new FormControl('');
-  modeInput = new FormControl('');
+
+  url: string;
+  mode = 'compact';
+
+
+  form = this.fb.group({
+    url: this.fb.control(['']),
+    mode: this.fb.control([''])
+  });
+
+  /**
+   *
+   */
+  constructor(private fb: FormBuilder) {}
+
 
   genPreview() {
-   
+    const {url, mode } = this.form.value;
+    this.url = url;
+    this.mode = mode;
+
   }
+
 }
 
 

@@ -1,19 +1,18 @@
 <h1>Welcome to Free Link Preview</h1>
 <div class="center">
-    <input type="text" [formControl]="urlInput" placeholder="Enter your URL to preview">
-    <select [formControl]="modeInput" name="modelist">
-        <option value="fiat" selected>Select Preview Mode</option>
-        <option value="simple">Simple</option>
-        <option value="compact">Compact</option>
-        <option value="detailed">Detailed</option>
-      </select>
-    <button (click)="genPreview()">Generate Your Link Preview</button>
+    <form [formGroup]="form">
+      <input type="text" formControlName="url" placeholder="Enter your URL to preview">
+      <select formControlName="mode">
+          <option value="simple">Simple</option>
+          <option value="compact">Compact</option>
+          <option value="detailed">Detailed</option>
+        </select>
+      <button (click)="genPreview()">Generate Your Link Preview</button>
+    </form>
 </div>
 
 <div class="spacer"></div>
-<unfurl-preview url="https://github.com/" mode="simple"></unfurl-preview>
-<div class="spacer"></div>
-<unfurl-preview url="https://github.com/" mode="compact"></unfurl-preview>
-<div class="spacer"></div>
-<unfurl-preview url="https://github.com/" mode="detailed"></unfurl-preview>
+<ng-container *ngIf="url">
+  <unfurl-preview [url]="url" [mode]="mode"></unfurl-preview>
+</ng-container>
 <div class="spacer"></div>
