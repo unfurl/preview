@@ -34,7 +34,7 @@ export class TruncateDirective implements AfterViewInit {
   }
 
   @HostListener('window:resize')
-  private onWindowResize() {
+  onWindowResize() {
     this.truncate();
   }
 
