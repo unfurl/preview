@@ -13,7 +13,7 @@ export class PreviewService {
     @Inject(PREVIEW_CONFIG) private config: PreviewConfig,
   ) {}
 
-  private unfurlUrl = `https://unfurl.online/api/preview?url=`;
+  private unfurlUrl = `https://unfurl.online/api/v2/preview?url=`;
   load(url: string): Observable<Preview> {
     return this.http.get<Preview>(`${this.unfurlUrl}${url}`, {headers: {
       Authorization: `Bearer ${this.config.apiToken}`
