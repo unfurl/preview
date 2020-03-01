@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PreviewComponent} from './components/preview.component';
 import { PREVIEW_CONFIG, PreviewConfig } from './models/preview-config.model';
@@ -9,14 +9,19 @@ import { PreviewCompactComponent } from './components/preview-compact/preview-co
 import { TruncateDirective } from './directives/truncate.directive';
 import { PreviewDetailedComponent } from './components/preview-detailed/preview-detailed.component';
 import { PreviewSimpleComponent } from './components/preview-simple/preview-simple.component';
+import { CustomElementModule } from './elements.module';
 
 @NgModule({
   declarations: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, TruncateDirective, PreviewDetailedComponent, PreviewSimpleComponent],
   imports: [CommonModule],
   exports: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
-  entryComponents: [BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent]
+  entryComponents: [PreviewComponent]
 })
-export class PreviewModule {
+export class PreviewModule extends CustomElementModule {
+
+  constructor(injector: Injector) {
+    super(injector, PreviewComponent, 'preview');
+  }
 
   static forRoot(config: PreviewConfig): ModuleWithProviders {
     return {

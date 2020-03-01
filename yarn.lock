@@ -208,6 +208,11 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/elements@^9.0.4":
+  version "9.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-9.0.4.tgz#52875776652159b084a7c99dbac8326b80fcdb67"
+  integrity sha512-6d0WSgxv5V/D8BJkJ1tmiuApKBv3X2K3/ZcHY9IW/ROlU30uUe3squI27sOhe7vVJdbaGoZAtzzMr5imJ3gpkw==
+
 "@angular/forms@^8.2.0":
   version "8.2.14"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-8.2.14.tgz#7d357c346a3884881beb044c50ec4a09d3d7ee8e"
@@ -1735,6 +1740,11 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@webcomponents/webcomponentsjs@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.4.2.tgz#7a5ba18430c202b13b1cd1c00e7db992ee8e58b5"
+  integrity sha512-3nGTTljmHHwfxBDppjbvUrKAmy78skC6nHwx3mYrbz677HXMAREh0aeJvoT4EnuomYJtLU3lS3RYvtB2MSz+NQ==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
