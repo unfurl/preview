@@ -24,9 +24,10 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class PreviewModule extends CustomElementModule {
 
-  constructor(injector: Injector) {
+ constructor(injector: Injector) {
     super(injector, PreviewComponent, 'preview');
-  }
+ }
+
 
   static forRoot(config: PreviewConfig): ModuleWithProviders<PreviewModule> {
     return {

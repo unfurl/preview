@@ -42,8 +42,11 @@
     "@webcomponents/webcomponentsjs": "^2.4.2",
     "core-js": "^3.6.4",
     "rxjs": "~6.5.4",
-    "tslib": "^1.11.1",
-    "zone.js": "^0.10.2"
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2",
+    "document-register-element": "1.14.3",
+    "react": "16.13.0",
+    "react-dom": "16.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.4",
@@ -69,5 +72,10 @@
     "tsickle": "^0.38.0",
     "tslint": "~6.0.0",
     "typescript": "~3.7.5"
+    "@nrwl/web": "9.0.4",
+    "@nrwl/react": "9.0.4",
+    "@types/react": "16.9.23",
+    "@types/react-dom": "16.9.5",
+    "@testing-library/react": "9.4.1"
   }
 }
