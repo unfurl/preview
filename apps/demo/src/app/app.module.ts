@@ -5,9 +5,8 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import '@unfurl/preview';
-import { unfurl } from '@unfurl/preview';
-unfurl.setConfig({apiToken: 'mdi61be6EhHH8Tdcqt5twdltZmFKRhiF87lWONb7hiF6PODKlHiHOMaQNSMW'});
+
+window['Unfurl']?.setConfig({apiToken: 'mdi61be6EhHH8Tdcqt5twdltZmFKRhiF87lWONb7hiF6PODKlHiHOMaQNSMW'});
 
 
 @NgModule({
