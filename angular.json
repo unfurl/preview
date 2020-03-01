@@ -12,13 +12,13 @@
           "options": {
             "tsConfig": "libs/preview/tsconfig.lib.json",
             "project": "libs/preview/ng-package.json"
-          }
-        ,          "configurations": {
+          },
+          "configurations": {
             "production": {
               "tsConfig": "libs/preview/tsconfig.lib.prod.json"
             }
           }
-},
+        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -34,7 +34,8 @@
           "options": {
             "jestConfig": "libs/preview/jest.config.js",
             "tsConfig": "libs/preview/tsconfig.spec.json",
-            "setupFile": "libs/preview/src/test-setup.ts"
+            "setupFile": "libs/preview/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       },
@@ -131,7 +132,8 @@
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "tsConfig": "apps/demo/tsconfig.spec.json",
-            "setupFile": "apps/demo/src/test-setup.ts"
+            "setupFile": "apps/demo/src/test-setup.ts",
+            "passWithNoTests": true
           }
         }
       }
