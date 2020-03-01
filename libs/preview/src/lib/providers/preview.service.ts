@@ -10,7 +10,7 @@ import { UNFURL_CONFIG_KEY } from '../config-key';
 export class PreviewService {
 
   constructor(
-    private http: HttpClient,
+    @Inject(HttpClient) private http: HttpClient,
     @Optional() @Inject(PREVIEW_CONFIG) private config: PreviewConfig,
   ) {}
 

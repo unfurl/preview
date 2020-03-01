@@ -15,8 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, TruncateDirective, PreviewDetailedComponent, PreviewSimpleComponent],
-  imports: [ BrowserModule, CommonModule, HttpClientModule ],
-  exports: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
+  imports: [ CommonModule, BrowserModule,  HttpClientModule ],
+  exports: [PreviewComponent],
   entryComponents: [PreviewComponent],
   providers: [
     PreviewService
