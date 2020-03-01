@@ -18,7 +18,7 @@ import { PreviewSimpleComponent } from './components/preview-simple/preview-simp
 })
 export class PreviewModule {
 
-  static forRoot(config: PreviewConfig): ModuleWithProviders {
+  static forRoot(config: PreviewConfig): ModuleWithProviders<PreviewModule> {
     return {
       ngModule: PreviewModule,
       providers: [
