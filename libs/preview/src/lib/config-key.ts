@@ -1,0 +1,1 @@
+export const UNFURL_CONFIG_KEY = Symbol('UNFURL_GLOBAL_CONFIG');
