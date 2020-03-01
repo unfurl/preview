@@ -183,8 +183,8 @@
               "apps/demo-react/src/favicon.ico",
               "apps/demo-react/src/assets"
             ],
-            "styles": ["apps/demo-react/src/styles.scss"],
-            "scripts": [],
+            "styles": ["apps/demo-react/src/styles.scss", "elements/styles.css"],
+            "scripts": ["elements/elements.js"],
             "webpackConfig": "@nrwl/react/plugins/webpack"
           },
           "configurations": {
