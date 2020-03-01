@@ -16,7 +16,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@unfurl/components": ["libs/components/src/index.ts"]
+      "@unfurl/preview": ["libs/preview/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
