@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, TruncateDirective, PreviewDetailedComponent, PreviewSimpleComponent],
   imports: [ CommonModule, BrowserModule,  HttpClientModule ],
   exports: [PreviewComponent],
-  entryComponents: [PreviewComponent],
+  entryComponents: [ PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
   providers: [
     PreviewService
   ]
