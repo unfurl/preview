@@ -1,22 +1,32 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, Optional } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { PREVIEW_CONFIG, PreviewConfig } from '../models/preview-config.model';
 import { Preview } from '../models/preview.model';
 import { Observable, of } from 'rxjs';
 import { startWith, delay, catchError } from 'rxjs/operators';
+import { UNFURL_CONFIG_KEY } from '../config-key';
 
 @Injectable()
 export class PreviewService {
 
   constructor(
     private http: HttpClient,
-    @Inject(PREVIEW_CONFIG) private config: PreviewConfig,
+    @Optional() @Inject(PREVIEW_CONFIG) private config: PreviewConfig,
   ) {}
 
-  private unfurlUrl = `https://unfurl.online/api/v2/preview?url=`;
+  private apiToken:string = '';
+
+  private unfurlUrl = `https://unfurl.online/api/v1/preview?url=`;
   load(url: string): Observable<Preview> {
+    const apiToken = this.config ? this.config.apiToken : window?.Unfurl?.[UNFURL_CONFIG_KEY]?.apiToken ?? '';
+
+    if(!apiToken) {
+      console.error(`Unfurl's Api Token is missing please make sure you add the Api Token Appropriately as per the documentation at https://github.com/unfurl/preview`);
+    }
+    this.apiToken = apiToken;
+
     return this.http.get<Preview>(`${this.unfurlUrl}${url}`, {headers: {
-      Authorization: `Bearer ${this.config.apiToken}`
+      Authorization: `Bearer ${this.apiToken}`
     }})
     .pipe(
       catchError(error => of({url}))

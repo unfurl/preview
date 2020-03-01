@@ -1,3 +1,4 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders, Injector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PreviewComponent} from './components/preview.component';
@@ -10,12 +11,16 @@ import { TruncateDirective } from './directives/truncate.directive';
 import { PreviewDetailedComponent } from './components/preview-detailed/preview-detailed.component';
 import { PreviewSimpleComponent } from './components/preview-simple/preview-simple.component';
 import { CustomElementModule } from './elements.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, TruncateDirective, PreviewDetailedComponent, PreviewSimpleComponent],
-  imports: [CommonModule],
+  imports: [ BrowserModule, CommonModule, HttpClientModule ],
   exports: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
-  entryComponents: [PreviewComponent]
+  entryComponents: [PreviewComponent],
+  providers: [
+    PreviewService
+  ]
 })
 export class PreviewModule extends CustomElementModule {
 
@@ -23,7 +28,7 @@ export class PreviewModule extends CustomElementModule {
     super(injector, PreviewComponent, 'preview');
   }
 
-  static forRoot(config: PreviewConfig): ModuleWithProviders {
+  static forRoot(config: PreviewConfig): ModuleWithProviders<PreviewModule> {
     return {
       ngModule: PreviewModule,
       providers: [
