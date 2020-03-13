@@ -11,8 +11,8 @@ export class AppComponent {
   title = 'demo';
 
   url: string;
-  mode = 'compact';
-  layout="list";
+  mode: string;
+  layout: string;
 
 
   form = this.fb.group({
@@ -35,6 +35,12 @@ export class AppComponent {
 
   }
 
-}
+  ngOnInit() {
+    this.form = this.fb.group({
+      mode: ['compact'],
+      layout: ['list'],
+      url:['https://unfurl.online']
+    });
+  }
 
-
+};
