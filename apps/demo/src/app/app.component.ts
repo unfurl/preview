@@ -11,12 +11,14 @@ export class AppComponent {
   title = 'demo';
 
   url: string;
-  mode = 'compact';
+  mode: string;
+  layout: string;
 
 
   form = this.fb.group({
     url: this.fb.control(['']),
-    mode: this.fb.control([''])
+    mode: this.fb.control(['']),
+    layout: this.fb.control([''])
   });
 
   /**
@@ -26,12 +28,19 @@ export class AppComponent {
 
 
   genPreview() {
-    const {url, mode } = this.form.value;
+    const {url, mode, layout } = this.form.value;
     this.url = url;
     this.mode = mode;
+    this.layout =layout
 
   }
 
-}
+  ngOnInit() {
+    this.form = this.fb.group({
+      mode: ['compact'],
+      layout: ['list'],
+      url:['https://unfurl.online']
+    });
+  }
 
-
+};
