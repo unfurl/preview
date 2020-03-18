@@ -2,6 +2,7 @@
     .preview.detailed {
       display: grid;
       min-height: 70px;
+      padding-top:20px;
       min-width: 260px;
       grid-template-columns: 4px auto 4px;
       grid-template-rows: 4px auto 4px auto 4px auto 4 px;
@@ -16,9 +17,9 @@
         padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
         background-position:center center;
         background-repeat:no-repeat;
+        background-size: contain;
         border-top-right-radius: 8px;
         border-top-left-radius: 8px;
-        background-size:cover;
         img {
           height: 50px;
         }
