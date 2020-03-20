@@ -1,5 +1,6 @@
 .preview-container.compact {
     .preview.compact {
+      padding-top:20px;
       display: grid;
       min-height: 70px;
       min-width: 260px;
@@ -18,7 +19,7 @@
         background-repeat:no-repeat;
         border-bottom-left-radius: 8px;
         border-top-left-radius: 8px;
-        background-size:cover;
+        background-size:contain;
         img {
           height: 50px;
         }
