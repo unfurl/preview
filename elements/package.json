@@ -1,6 +1,7 @@
 {
   "name": "@unfurl/elements",
   "version": "0.0.1",
+  "description": "Link Preview Component written as Shareable Custom Elements",
   "main": "elements.js",
   "peerDependencies": {
   }
