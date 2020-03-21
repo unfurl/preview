@@ -5,12 +5,13 @@ import { Preview } from '../models/preview.model';
 import { Observable, of } from 'rxjs';
 import { startWith, delay, catchError } from 'rxjs/operators';
 import { UNFURL_CONFIG_KEY } from '../config-key';
+import { unfurl } from '../../unfurl';
 
 @Injectable()
 export class PreviewService {
 
   constructor(
-    private http: HttpClient,
+    @Inject(HttpClient) private http: HttpClient,
     @Optional() @Inject(PREVIEW_CONFIG) private config: PreviewConfig,
   ) {}
 
@@ -18,7 +19,7 @@ export class PreviewService {
 
   private unfurlUrl = `https://unfurl.online/api/v1/preview?url=`;
   load(url: string): Observable<Preview> {
-    const apiToken = this.config ? this.config.apiToken : window?.Unfurl?.[UNFURL_CONFIG_KEY]?.apiToken ?? '';
+    const apiToken = this.config ? this.config.apiToken : unfurl.getConfig()?.apiToken ?? '';
 
     if(!apiToken) {
       console.error(`Unfurl's Api Token is missing please make sure you add the Api Token Appropriately as per the documentation at https://github.com/unfurl/preview`);

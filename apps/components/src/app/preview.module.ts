@@ -15,18 +15,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, TruncateDirective, PreviewDetailedComponent, PreviewSimpleComponent],
-  imports: [ BrowserModule, CommonModule, HttpClientModule ],
-  exports: [PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
-  entryComponents: [PreviewComponent],
+  imports: [ CommonModule, BrowserModule,  HttpClientModule ],
+  exports: [PreviewComponent],
+  entryComponents: [ PreviewComponent, BrowserLinkComponent, PreviewMinimalComponent, PreviewCompactComponent, PreviewDetailedComponent, PreviewSimpleComponent],
   providers: [
     PreviewService
   ]
 })
 export class PreviewModule extends CustomElementModule {
 
-  constructor(injector: Injector) {
+ constructor(injector: Injector) {
     super(injector, PreviewComponent, 'preview');
-  }
+ }
+
 
   static forRoot(config: PreviewConfig): ModuleWithProviders<PreviewModule> {
     return {

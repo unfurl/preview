@@ -19,8 +19,6 @@ class Unfurl {
 
 }
 
-window.Unfurl = new Unfurl();
-
 export const loadComponents = async () => await platformBrowserDynamic()
   .bootstrapModule(PreviewModule)
   .catch(err => console.error(err));

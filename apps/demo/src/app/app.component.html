@@ -7,12 +7,16 @@
           <option value="compact">Compact</option>
           <option value="detailed">Detailed</option>
         </select>
+        <select formControlName="layout">
+          <option value="grid">Grid</option>
+          <option value="list">List</option>
+        </select>
       <button (click)="genPreview()">Generate Your Link Preview</button>
     </form>
 </div>
 
 <div class="spacer"></div>
 <ng-container *ngIf="url">
-  <unf-preview [url]="url" [mode]="mode"></unf-preview>
+  <unf-preview [url]="url" [mode]="mode" [layout]="layout"></unf-preview>
 </ng-container>
 <div class="spacer"></div>

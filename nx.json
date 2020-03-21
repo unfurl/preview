@@ -17,6 +17,20 @@
     "demo-e2e": {
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "demo-react": {
+      "tags": []
+    },
+    "demo-react-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-react"]
+    },
+    "components": {
+      "tags": []
+    },
+    "components-e2e": {
+      "tags": [],
+      "implicitDependencies": ["components"]
     }
   }
 }

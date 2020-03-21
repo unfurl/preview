@@ -1,0 +1,28 @@
+.browser-link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 18px;
+    background: #98fe96;
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+    color: #009ee1;
+    .browser-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto';
+      font-size: 0.8em;
+      color: #009ee1;
+      svg.browser-link-arrow {
+        margin: 0.4em;
+        height: 0.8em;
+        width: 0.8em;
+      }
+      a {
+        color: #009ee1;
+        text-decoration: none;
+      }
+    }
+  }
