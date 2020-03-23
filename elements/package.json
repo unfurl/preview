@@ -1,12 +1,12 @@
 {
   "name": "@unfurl/elements",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "description": "Link Preview Component written as Shareable Custom Elements",
   "main": "elements.js",
   "files": [
-    "./**/*",
-    "./**/*.css"
+    "/**/*",
+    "/**/*.css"
   ],
   "peerDependencies": {}
 }
