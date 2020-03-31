@@ -53,6 +53,13 @@ export class PreviewComponent implements OnInit {
         this.previewService.load(this.url)
         .subscribe(
           preview => {
+            // We need to verify here!!
+            // For testing
+            // preview.image = 'google.com.wwww.edsfsd/dsfdsfsd.png'
+            if (!this.previewService.verifyURL(preview)) {
+              preview.image = null;
+            }
+            // console.log(preview)
             this.previewSubject.next(preview);
             setTimeout(() => this.cdRef.detectChanges());
           }
