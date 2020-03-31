@@ -34,4 +34,10 @@ export class PreviewService {
       catchError(error => of({url}))
     )
   }
+
+  verifyURL(preview :Preview) {
+    const urlReg: RegExp = /^(https:\/\/|www)(\.)*(.+)\.(png|jpeg|svg)$/
+    return preview.image.match(urlReg)
+
+  }
 }
