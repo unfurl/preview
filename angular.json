@@ -1,50 +1,6 @@
 {
   "version": 1,
   "projects": {
-    "preview": {
-      "projectType": "library",
-      "root": "libs/preview",
-      "sourceRoot": "libs/preview/src",
-      "prefix": "unfurl",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "libs/preview/tsconfig.lib.json",
-            "project": "libs/preview/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/preview/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/preview/tsconfig.lib.json",
-              "libs/preview/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/preview/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/preview/jest.config.js",
-            "tsConfig": "libs/preview/tsconfig.spec.json",
-            "setupFile": "libs/preview/src/test-setup.ts",
-            "passWithNoTests": true
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "styleext": "scss"
-        }
-      }
-    },
     "demo": {
       "projectType": "application",
       "schematics": {
@@ -396,7 +352,7 @@
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "preview",
+  "defaultProject": "components",
   "schematics": {
     "@nrwl/angular:application": {
       "unitTestRunner": "jest",

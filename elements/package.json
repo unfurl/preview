@@ -1,7 +1,6 @@
 {
   "name": "@unfurl/elements",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "main": "elements.js",
-  "peerDependencies": {
-  }
+  "peerDependencies": {}
 }

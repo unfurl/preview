@@ -1,8 +1,0 @@
-{
-  "name": "@unfurl/preview",
-  "version": "0.0.1",
-  "peerDependencies": {
-    "@angular/common": "^9.0.4",
-    "@angular/core": "^9.0.4"
-  }
-}
