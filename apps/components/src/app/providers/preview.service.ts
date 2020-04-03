@@ -7,6 +7,15 @@ import { catchError, map } from 'rxjs/operators';
 import { unfurl } from '../unfurl';
 import {pick} from 'lodash-es';
 
+function  mapMetadataToPreview(metadata: UnfurlMetadata): Preview {
+  const preview: Preview = pick(metadata, [ 'title', 'description' ]);
+  // Get image and description
+  preview.image =
+    metadata?.oEmbed?.thumbnails?.[ 0 ]?.url ?? metadata?.twitter_card?.images?.[ 0 ]?.url ?? metadata?.open_graph?.images?.[ 0 ]?.url ?? metadata?.favicon ?? metadata?.open_graph?.images?.[ 0 ]?.url;
+  preview.description = metadata?.open_graph?.description ?? metadata?.twitter_card?.description;
+  return preview;
+}
+
 @Injectable()
 export class PreviewService {
 
@@ -31,18 +40,15 @@ export class PreviewService {
     }})
     .pipe(
       map(metadata => {
-        const preview: Preview = pick(metadata, ['title', 'description' ]);
-        // Get image and description
-        preview.image =
-          metadata?.oEmbed?.thumbnails?.[ 0 ]?.url ?? metadata?.twitter_card?.images?.[ 0 ]?.url ?? metadata?.open_graph?.images?.[ 0 ]?.url  ?? metadata?.favicon ?? metadata?.open_graph?.images?.[ 0 ]?.url;
-        preview.description = metadata?.open_graph?.description ?? metadata?.twitter_card?.description;
-
-        preview.url = metadata?.url ?? url;
-        return preview;
+         const preview = mapMetadataToPreview(metadata);
+         preview.url = url;
+         return preview;
       }),
       catchError(error => of({url}))
     )
   }
+
+
 
   verifyURL(preview: Preview) {
     const urlReg: RegExp = /^(https:\/\/|www)(\.)*(.+)\.(png|jpeg|svg)$/;
