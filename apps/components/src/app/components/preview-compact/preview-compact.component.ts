@@ -15,4 +15,8 @@ export class PreviewCompactComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(changes) {
+    console.log(changes);
+  }
+
 }

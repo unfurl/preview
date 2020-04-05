@@ -1,23 +1,9 @@
 <ng-container *ngIf="preview$ | async as preview; else minimal">
-  <ng-container [ngSwitch]="mode" *ngIf="layout=='list'">
-    <unfurl-preview-simple
-      *ngSwitchCase="'simple'"
-      [preview]="preview"
-    ></unfurl-preview-simple>
-    <unfurl-preview-compact
-      *ngSwitchCase="'compact'"
-      [preview]="preview"
-    ></unfurl-preview-compact>
-    <unfurl-preview-detailed
-      *ngSwitchCase="'detailed'"
-      [preview]="preview"
-    ></unfurl-preview-detailed>
-  </ng-container>
-  <ng-container [ngSwitch]="mode" *ngIf="layout=='grid'">
-    <div style="width: 50%">
+  <ng-container *ngIf="preview && !loading; else minimal">
+    <ng-container [ngSwitch]="mode" *ngIf="layout=='list'">
       <unfurl-preview-simple
-      *ngSwitchCase="'simple'"
-      [preview]="preview"
+        *ngSwitchCase="'simple'"
+        [preview]="preview"
       ></unfurl-preview-simple>
       <unfurl-preview-compact
         *ngSwitchCase="'compact'"
@@ -27,7 +13,23 @@
         *ngSwitchCase="'detailed'"
         [preview]="preview"
       ></unfurl-preview-detailed>
-    </div>
+    </ng-container>
+    <ng-container [ngSwitch]="mode" *ngIf="layout=='grid'">
+      <div style="width: 50%">
+        <unfurl-preview-simple
+        *ngSwitchCase="'simple'"
+        [preview]="preview"
+        ></unfurl-preview-simple>
+        <unfurl-preview-compact
+          *ngSwitchCase="'compact'"
+          [preview]="preview"
+        ></unfurl-preview-compact>
+        <unfurl-preview-detailed
+          *ngSwitchCase="'detailed'"
+          [preview]="preview"
+        ></unfurl-preview-detailed>
+      </div>
+    </ng-container>
   </ng-container>
 </ng-container>
 <ng-template #minimal>

@@ -8,9 +8,6 @@
     "nx.json": "*"
   },
   "projects": {
-    "preview": {
-      "tags": []
-    },
     "demo": {
       "tags": []
     },
