@@ -48,10 +48,7 @@ export class PreviewService {
     )
   }
 
-
-
-  verifyURL(preview: Preview) {
-    const urlReg: RegExp = /^(https:\/\/|www)(\.)*(.+)\.(png|jpeg|svg)$/;
-    return preview?.image?.match(urlReg);
-  }
+  verifyURL(preview :Preview) {
+    const urlReg: RegExp = /^(https:\/\/|www)(\.)*(.+)\.(png|jpeg|svg|jpg)$/
+    return preview.image.match(urlReg)
 }
