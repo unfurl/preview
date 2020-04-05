@@ -12,7 +12,7 @@ function  mapMetadataToPreview(metadata: UnfurlMetadata): Preview {
   // Get image and description
   preview.image =
     metadata?.oEmbed?.thumbnails?.[ 0 ]?.url ?? metadata?.twitter_card?.images?.[ 0 ]?.url ?? metadata?.open_graph?.images?.[ 0 ]?.url ?? metadata?.favicon ?? metadata?.open_graph?.images?.[ 0 ]?.url;
-  preview.description = metadata?.open_graph?.description ?? metadata?.twitter_card?.description;
+  preview.description = metadata?.description ?? metadata?.open_graph?.description ?? metadata?.twitter_card?.description;
   return preview;
 }
 

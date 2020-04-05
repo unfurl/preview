@@ -7,6 +7,7 @@ export interface Preview {
 
 export interface UnfurlMetadata {
   url: string;
+  description?: string;
   favicon?: string,
   oEmbed?: {
     type: 'photo' | 'video' | 'link' | 'rich'
