@@ -18,7 +18,7 @@ export const App = () => {
   return (
     <div className="app">
       React
-      <unf-preview url="https://unfurl.online"></unf-preview>
+      <unf-preview url="https://unfurl.io"></unf-preview>
     </div>
   );
 };
