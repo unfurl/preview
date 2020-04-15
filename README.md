@@ -1,79 +1,94 @@
+
+
+
 # Unfurl
 
-This project contains reusable preview  for Unfurl
+  
+Lightning fast, resuable and framework agnostic component, for providing link previews in several modes and layouts.
 
 ## Getting Unfurl Free API Token
 
+  
+
 * Signup on <https://unfurl.io/> or Signin if you are already registered.
+
+  
 
 * After login, from the dashboard navigate to Generate/Manage your Api Tokens here.
 
+  
+
 * Next, in Create API Token section assign a token name and click on create.
 
-> Note: Please save the generated api token, it is only displayed for one time.  
+  
 
-## Seting up API token
+> Note: Please save the generated api token, it is only displayed for one time.
 
-* Register your API token in `apps\demo\src\app\app.module.ts` file
-
-    ```typescript
-        @NgModule({
-            declarations: [AppComponent],
-            imports: [
-                BrowserModule,
-                HttpClientModule,
-                PreviewModule.forRoot({
-                /* Free Test Token */
-                apiToken: 'Paste your API Token Here'
-                })
-            ],
-            providers: [],
-            bootstrap: [AppComponent]
-        })
-    ```
+  
 
 ## Preview Your URL & setup design modes for preview
 
-### Test Your First URL preview
+ 
 
-* Navigate to `apps\demo\src\app\app.component.html` and paste your URL in `<unfurl-preview url="Your URL">` tag.
+ ### Installation 
+ -  **Using NPM**
+	 - `npm install @unfurl/elements`
+ - **Using Yarn**
+	 -  `yarn add @unfurl/elements`
 
-    ```html
-        <div class="spacer"></div>
-        <unfurl-preview url="Your URL" mode="simple"></unfurl-preview>
-        <div class="spacer"></div>
-        <unfurl-preview url="Your URL" mode="compact"></unfurl-preview>
-        <div class="spacer"></div>
-        <unfurl-preview url="Your URL" mode="detailed"></unfurl-preview>
-        <div class="spacer"></div>
-   ```
+### Getting Started
+Once installation is done, it can be imported and configured as follows.
+
+- `import '@unfurl/elements'`
+- **Typescript**
+```typescript
+window.Unfurl.setConfig({  
+    apiToken: 'YOUR_API_TOKEN'  
+  });
+```
+- **For other environments**
+```javascript
+Unfurl.setConfig({  
+    apiToken: 'YOUR_API_TOKEN'  
+  });
+
+```
+
+* Inside your template where you want to add link preview add `<unfurl-preview url="Paste Your URL">` tag.
 
 ### Selecting design mode for Unfurl preview URL
 
-* Currently Unfurl have 3 design modes simple, compact & detailed.
-  * Simple Mode
+  Currenlty Unfurl provides 3 modes and 2 layouts, which can be implmented using props.
+
+
+* **Simple Mode**
+
+![simple](https://user-images.githubusercontent.com/11289133/73384189-c7ce6d00-42f0-11ea-9036-0d59d1f51b0f.PNG)
+
   
-    ![simple](https://user-images.githubusercontent.com/11289133/73384189-c7ce6d00-42f0-11ea-9036-0d59d1f51b0f.PNG)
 
-  * Compact Mode
+* **Compact Mode**
+
+![compact](https://user-images.githubusercontent.com/11289133/73383958-58587d80-42f0-11ea-8602-cba502125913.PNG)
+
   
-    ![compact](https://user-images.githubusercontent.com/11289133/73383958-58587d80-42f0-11ea-8602-cba502125913.PNG)
 
-  * Detailed Mode
-  
-    ![detailed](https://user-images.githubusercontent.com/11289133/73384057-82aa3b00-42f0-11ea-8557-42e8bfebd203.PNG)
+* **Detailed Mode**
 
-* Select Unfurl design modes
-  * Navigate to `apps\demo\src\app\app.component.html`
+![detailed](https://user-images.githubusercontent.com/11289133/73384057-82aa3b00-42f0-11ea-8557-42e8bfebd203.PNG)
 
-    ```html
-        <div class="spacer"></div>
-        <unfurl-preview url="Paste your link here" mode="simple"></unfurl-preview>
-        <div class="spacer"></div>
-        <unfurl-preview url="Paste your link here" mode="compact"></unfurl-preview>
-        <div class="spacer"></div>
-        <unfurl-preview url="Paste your link here" mode="detailed"></unfurl-preview>
-        <div class="spacer"></div>
-    ```
+  * **List Layout**
+	  This layout enables unfurl-preview to takes full width of the application and also making it responsive.
+	  
+  * **Grid Layout**
+	  This layout enables unfurl-preview to take only half portion of screen and reduces font sizes to keep responsiveness.
 
-  * Set mode property `mode="Your desired style"` to `simple or compact or detailed` in `<unfurl-preview>` tag.
+### Select Unfurl design modes and layouts
+
+```html
+
+<unfurl-preview url="Paste your link here" mode="compact | simple | detailed" layout="list | grid"></unfurl-preview>
+```
+
+* Set mode property `mode="Your desired style"` to `simple or compact or detailed` in `<unfurl-preview>` tag.
+
