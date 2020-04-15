@@ -34,7 +34,7 @@ Lightning fast, resuable and framework agnostic component, for providing link pr
  -  **Using NPM**
 	 - `npm install @unfurl/elements`
  - **Using Yarn**
-	 -  `yarn install @unfurl/elements`
+	 -  `yarn add @unfurl/elements`
 
 ### Getting Started
 Once installation is done, it can be imported and configured as follows.
@@ -43,18 +43,18 @@ Once installation is done, it can be imported and configured as follows.
 - **Typescript**
 ```typescript
 window.Unfurl.setConfig({  
-    apiToken: 'API_TOKEN'  
+    apiToken: 'YOUR_API_TOKEN'  
   });
 ```
 - **For other environments**
 ```javascript
 Unfurl.setConfig({  
-    apiToken: 'API_TOKEN'  
+    apiToken: 'YOUR_API_TOKEN'  
   });
 
 ```
 
-* Paste your URL in `<unfurl-preview url="Your URL">` tag.
+* Inside your template where you want to add link preview add `<unfurl-preview url="Paste Your URL">` tag.
 
 ### Selecting design mode for Unfurl preview URL
 
