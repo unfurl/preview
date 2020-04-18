@@ -8,7 +8,7 @@
       <strong>{{ preview?.title }}</strong>
     </div>
     <div class="preview-description">
-      <div textTruncate class="description">{{preview.description}}</div>
+      <div [textTruncate]="preview?.description" class="description">{{preview?.description}}</div>
       <a class="url" [href]="preview.url">{{ preview.url }}</a>
     </div>
   </div>

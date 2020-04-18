@@ -39,7 +39,7 @@ export class AppComponent {
     this.form = this.fb.group({
       mode: ['compact'],
       layout: ['list'],
-      url:['https://unfurl.online']
+      url:['https://unfurl.io']
     });
   }
 

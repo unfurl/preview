@@ -26,6 +26,7 @@ export class PreviewModule extends CustomElementModule {
 
  constructor(injector: Injector) {
     super(injector, PreviewComponent, 'preview');
+    console.info('Thanks for using unfurl!');
  }
 
 

@@ -1,4 +1,4 @@
-import { Directive, AfterViewInit, ElementRef, PLATFORM_ID, Inject, HostListener, Input } from '@angular/core';
+import { Directive, AfterViewInit, ElementRef, PLATFORM_ID, Inject, HostListener, Input, SimpleChanges } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
@@ -7,14 +7,16 @@ import { isPlatformBrowser } from '@angular/common';
 export class TruncateDirective implements AfterViewInit {
 
   @Input()
-  set textTruncate(limit: any) {
+  set limit(limit: any) {
     if (limit !== '') {
       this._truncate = limit;
     }
   }
-  get textTruncate() {
+  get limit() {
     return this._truncate;
   }
+
+  @Input() textTruncate: string;
 
   private _truncate = 200;
   private get el(): HTMLElement {
@@ -33,6 +35,12 @@ export class TruncateDirective implements AfterViewInit {
     this.truncate();
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.textTruncate) {
+      this.truncate();
+    }
+  }
+
   @HostListener('window:resize')
   onWindowResize() {
     this.truncate();
@@ -46,7 +54,7 @@ export class TruncateDirective implements AfterViewInit {
     }
 
     // store the original innerText
-    if (this.innerText === undefined) {
+    if (this.textTruncate === undefined || this.textTruncate === '') {
       this.innerText = this.el.innerText.trim();
     }
 
@@ -54,7 +62,7 @@ export class TruncateDirective implements AfterViewInit {
     this.el.innerText = this.innerText;
 
     // truncate the text and append the ellipsis
-    this.el.innerText = `${this.el.innerText.substr(0, this.textTruncate - platformDiff)}…`;
+    this.el.innerText = (this.textTruncate?.substr(0, this.limit - platformDiff) ?? '' )+ '...';
 
   }
 }

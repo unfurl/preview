@@ -1,10 +1,10 @@
 # Unfurl Elements
 
-Framework agnostic link preview component as seen on <https://unfurl.online/>
+Framework agnostic link preview component as seen on <https://unfurl.io/>
 
 ## Getting Unfurl Free API Token
 
-* Signup on <https://unfurl.online/> or Signin if you are already registered.
+* Signup on <https://unfurl.io/> or Signin if you are already registered.
 
 * After login, from the dashboard navigate to Generate/Manage your Api Tokens here.
 
