@@ -1,6 +1,6 @@
 {
   "name": "@unfurl/elements",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "MIT",
   "description": "Link Preview Component written as Shareable Custom Elements",
   "main": "elements.js",
